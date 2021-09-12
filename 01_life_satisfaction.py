@@ -4,8 +4,8 @@ import pandas
 from sklearn.linear_model import LinearRegression
 
 # load data
-oecd_bli_2015 = pandas.read_csv("./dataset/life_satisfaction/oecd_bli_2015.csv", thousands=",")
-gdp_per_capita_2015 = pandas.read_csv("./dataset/life_satisfaction/gdp_per_capita.csv",
+oecd_bli_2015 = pandas.read_csv("./datasets/life_satisfaction/oecd_bli_2015.csv", thousands=",")
+gdp_per_capita_2015 = pandas.read_csv("./datasets/life_satisfaction/gdp_per_capita.csv",
                                       thousands=",",
                                       delimiter="\t", encoding="latin1", na_values="n/a")
 
