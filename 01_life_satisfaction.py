@@ -4,8 +4,9 @@ import pandas
 from sklearn.linear_model import LinearRegression
 
 # load data
-oecd_bli_2015 = pandas.read_csv("../dataset/oecd_bli_2015.csv", thousands=",")
-gdp_per_capita_2015 = pandas.read_csv("../dataset/gdp_per_capita.csv", thousands=",",
+oecd_bli_2015 = pandas.read_csv("./dataset/life_satisfaction/oecd_bli_2015.csv", thousands=",")
+gdp_per_capita_2015 = pandas.read_csv("./dataset/life_satisfaction/gdp_per_capita.csv",
+                                      thousands=",",
                                       delimiter="\t", encoding="latin1", na_values="n/a")
 
 
@@ -19,6 +20,7 @@ def prepare_country_stats(oecd_bli, gdp_per_capita):
                                       left_index=True, right_index=True)
     full_country_stats.sort_values(by="GDP per capita", inplace=True)
     return full_country_stats[["GDP per capita", "Life satisfaction"]]
+
 
 country_stats = prepare_country_stats(oecd_bli_2015, gdp_per_capita_2015)
 x = numpy.c_[country_stats["GDP per capita"]]
